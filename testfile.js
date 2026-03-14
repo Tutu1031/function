@@ -1,5 +1,5 @@
-var headers = $request.headers;
+var obj = JSON.parse($response.body);
 
-headers["shadowrocket-test"] = "hello";
+obj.shadowrocket = "working";
 
-$done({headers});
+$done({body: JSON.stringify(obj)});
